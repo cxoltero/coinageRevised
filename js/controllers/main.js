@@ -17,9 +17,12 @@ angular.module('kenzanExc')
 
 				// take the value  and multiply by 100
 				$scope.newChange.amount =Math.round($scope.newChange.amount*100);
-				$scope.totalAmount = $scope.newChange.amount;
-				return;
+				if(isNaN($scope.newChange.amount)){
+					window.alert('Please enter a valid number');
+					throw ('Please enter a valid number');
+				}
 			}
+			return $scope.newChange.amount;
 		}
 
 		$scope.checkUndefined = function(){
@@ -27,31 +30,41 @@ angular.module('kenzanExc')
 			if($scope.newChange.amount === undefined){
 				$scope.newChange.amount ="";
 				window.alert('Please enter a valid number');
-	    		return;
+	    		throw ('Please enter a valid number');
 			}
+			return $scope.newChange.amount
 		}
 
 		$scope.checkforLorP = function(){
-			// check if the input contains £ 
+
 			if($scope.newChange.amount[0]=== '£' || $scope.newChange.amount[$scope.newChange.amount.length-1] === 'p'){
-				// this will get rid of the £
-				if($scope.newChange.amount[0]=== '£'){
-					$scope.newChange.amount = $scope.newChange.amount.substr(1);
-					$scope.newChange.amount =Math.round($scope.newChange.amount*100);
-				}
-				if($scope.newChange.amount[$scope.newChange.amount.length-1] === 'p'){
-					// remove the p 
-					$scope.newChange.amount =$scope.newChange.amount.slice(0, -1);
-					// now we have to check for a period
-					if($scope.newChange.amount.indexOf('.')!== -1){
-						$scope.newChange.amount = Math.round($scope.newChange.amount*100);
+					// this will get rid of the £
+					if($scope.newChange.amount[0]=== '£'){
+						$scope.newChange.amount = $scope.newChange.amount.substr(1);
+						$scope.newChange.amount =Math.round($scope.newChange.amount*100);
+						if(isNaN($scope.newChange.amount)){
+							window.alert('Please enter a valid number');
+							throw ('Please enter a valid number');
+						}
+						return $scope.newChange.amount;
 					}
-					$scope.totalAmount = $scope.newChange.amount;
+					if($scope.newChange.amount[$scope.newChange.amount.length-1] === 'p'){
+						// remove the p 
+						$scope.newChange.amount =$scope.newChange.amount.slice(0, -1);
+						// now we have to check for a period
+						if($scope.newChange.amount.indexOf('.')!== -1){
+							$scope.newChange.amount = Math.round($scope.newChange.amount*100);
+						}
+						if(isNaN($scope.newChange.amount)){
+							window.alert('Please enter a valid number');
+							throw ('Please enter a valid number');
+						}
+						return $scope.newChange.amount;
+					}
+				}else{
 					return $scope.newChange.amount;
-				}
-				$scope.totalAmount = $scope.newChange.amount;		
-				
-	    	}
+			}
+
 	    	return $scope.totalAmount;
 		}		
 
@@ -59,8 +72,9 @@ angular.module('kenzanExc')
 			$scope.newChange.amount = $scope.newChange.amount.toString();
 			if($scope.newChange.amount.indexOf('.')!== -1){
 				$scope.newChange.amount = Math.round($scope.newChange.amount*100);
-				$scope.totalAmount = $scope.newChange.amount;
 			}
+			$scope.newChange.amount *=1;
+			return $scope.newChange.amount;
 		}
 
 		$scope.checkforNaN = function(){

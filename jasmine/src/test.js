@@ -1,10 +1,23 @@
 // revised functions
 var totalAmount =0;
 
-function checkNaN(n){
+function checkforNaN(n){
 	return isNaN(n);
 }
 
+
+// this will check for an empty space, if there is one, it willl return undefined
+// if there is no empty space it will return the actuall object we pass in
+function checkUndefined(n){
+		// check for an empty input 
+	if(n === undefined){
+		n ="";
+		window.alert('Please enter a valid number');
+		throw ('Please enter a valid number');
+		// return;
+	}
+	return n;
+}
 
 // takes a number, turns it into a string, if there is a dot it will multiply by 100 and round the result, 
 // will return a number
@@ -16,20 +29,6 @@ function checkforDot(num){
 	num *=1;
 	return num;
 }
-
-// this will check for an empty space, if there is one, it willl return undefined
-// if there is no empty space it will return the actuall object we pass in
-function checkUndefined(n){
-		// check for an empty input 
-	if(n === undefined){
-		n ="";
-		window.alert('Please enter a valid number');
-		return;
-	}else{
-		return n;
-	}
-}
-
 // this function will take the input and check if there is a £ at the begginning and a p at the end
 // if that condition is not met, will return the input
 // if the condition is met, it will remove the letters, then will check for the remaining string
@@ -45,8 +44,8 @@ function checkforLandP(n){
 		// take the value  and multiply by 100
 		n =Math.round(n*100);
 		if(isNaN(n)){
-			alert('Please enter a valid number');
-			return;
+			window.alert('Please enter a valid number');
+			throw ('Please enter a valid number');
 		}
 	}
 	return n;
@@ -63,8 +62,8 @@ function checkforLorP(n){
 			n = n.substr(1);
 			n =Math.round(n*100);
 			if(isNaN(n)){
-				alert('Please enter a valid number');
-				return;
+				window.alert('Please enter a valid number');
+				throw ('Please enter a valid number');
 			}
 			return n;
 		}
@@ -76,8 +75,8 @@ function checkforLorP(n){
 				n = Math.round(n*100);
 			}
 			if(isNaN(n)){
-				alert('Please enter a valid number');
-				return;
+				window.alert('Please enter a valid number');
+				throw ('Please enter a valid number');
 			}
 			return n;
 		}
@@ -86,40 +85,3 @@ function checkforLorP(n){
 	}
 }
 
-
-// Functions to check
-
-
-function checkforLorP(n){
-
-		// check if the input contains £ 
-	if(n[0]=== '£' || n[n.length-1] === 'p'){
-		// this will get rid of the £
-		if(n[0]=== '£'){
-			n = n.substr(1);
-			n =Math.round(n*100);
-		}
-		if(n[n.length-1] === 'p'){
-			// remove the p 
-			n =n.slice(0, -1);
-			// now we have to check for a period
-			if(n.indexOf('.')!== -1){
-				n = Math.round(n*100);
-			}
-			totalAmount = n;
-			return n;
-		}
-		totalAmount = n;		
-		
-	}
-	return totalAmount;
-}
-
-function checkValues(n){
-	checkUndefined(n);
-	checkforLandP(n);
-	checkforLorP(n);
-	checkforDot(n);
-	checkNaN(n);
-	return n *= 1;
-};

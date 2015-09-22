@@ -38,10 +38,3 @@ describe("check for £ and p", function(){
   	expect(checkforLorP('£asdfsdfp')).toBeUndefined();
   });
 });
-// describe("checkValues", function(){
-// 	it("Checks for valid input of a number, it also checks for £ and p", function(){
-// 		expect(checkValues(234)).toBe(234);
-// 		expect(checkValues("asdf")).toBeNaN();
-// 		expect(checkValues('234p')).toBe(234);
-// 	})
-// })
