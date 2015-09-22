@@ -30,6 +30,14 @@ describe("checkUndefined", function(){
 		expect(checkUndefined("hello")).toBe("hello");
 	})
 })
+describe("check for £ and p", function(){
+  it("checks the array for £ and p together", function(){
+  	expect(checkforLorP('£234')).toBe(23400);
+  	expect(checkforLorP('234p')).toBe(234);
+  	expect(checkforLorP('asdfsdf')).toBe('asdfsdf');
+  	expect(checkforLorP('£asdfsdfp')).toBeUndefined();
+  });
+});
 // describe("checkValues", function(){
 // 	it("Checks for valid input of a number, it also checks for £ and p", function(){
 // 		expect(checkValues(234)).toBe(234);

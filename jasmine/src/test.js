@@ -30,7 +30,6 @@ function checkUndefined(n){
 	}
 }
 
-
 // this function will take the input and check if there is a £ at the begginning and a p at the end
 // if that condition is not met, will return the input
 // if the condition is met, it will remove the letters, then will check for the remaining string
@@ -53,21 +52,46 @@ function checkforLandP(n){
 	return n;
 };
 
-
-
+// this function will check if either £ or p are present in an input
+// it will take a string, and check the begginning and the end of it
+// if it has either one, it will return a number, 
+// if it doesnt, it will return the same input
+function checkforLorP(n){
+	if(n[0]=== '£' || n[n.length-1] === 'p'){
+		// this will get rid of the £
+		if(n[0]=== '£'){
+			n = n.substr(1);
+			n =Math.round(n*100);
+			if(isNaN(n)){
+				alert('Please enter a valid number');
+				return;
+			}
+			return n;
+		}
+		if(n[n.length-1] === 'p'){
+			// remove the p 
+			n =n.slice(0, -1);
+			// now we have to check for a period
+			if(n.indexOf('.')!== -1){
+				n = Math.round(n*100);
+			}
+			if(isNaN(n)){
+				alert('Please enter a valid number');
+				return;
+			}
+			return n;
+		}
+	}else{
+		return n;
+	}
+}
 
 
 // Functions to check
 
 
-
-
-
-
-
-
 function checkforLorP(n){
-	n= n.toString();
+
 		// check if the input contains £ 
 	if(n[0]=== '£' || n[n.length-1] === 'p'){
 		// this will get rid of the £
