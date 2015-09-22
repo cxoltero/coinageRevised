@@ -90,7 +90,6 @@ angular.module('kenzanExc')
 			$scope.checkforLorP();
 			$scope.checkforDot();
 	    	$scope.checkforNaN();
-
 			$scope.newChange.amount *= 1;
 			$scope.totalAmount = $scope.newChange.amount;
 		};

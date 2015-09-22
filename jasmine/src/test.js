@@ -70,6 +70,7 @@ function checkforLorP(n){
 		if(n[n.length-1] === 'p'){
 			// remove the p 
 			n =n.slice(0, -1);
+
 			// now we have to check for a period
 			if(n.indexOf('.')!== -1){
 				n = Math.round(n*100);
@@ -78,6 +79,7 @@ function checkforLorP(n){
 				window.alert('Please enter a valid number');
 				throw ('Please enter a valid number');
 			}
+			n*=1;
 			return n;
 		}
 	}else{
@@ -87,7 +89,7 @@ function checkforLorP(n){
 
 
 // function to make change
-function makeChange(){
+function makeChange(n){
 var newChange = {};
 var coins = [];
 
@@ -115,8 +117,7 @@ var coins = [];
 
    	// at the end the value of amount will always be 0, so no need to print it
    	delete n;
-   	console.log(newChange);
    	coins.push(newChange);
-	newChange ={};
+	return newChange;
 };
 
