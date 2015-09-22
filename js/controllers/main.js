@@ -7,8 +7,6 @@ angular.module('kenzanExc')
 		$scope.totalAmount =0;
 
 
-
-
 		$scope.checkforLandP = function(){
 			// check if the input contains £ and p at the same time
 			if($scope.newChange.amount[0]=== '£' && $scope.newChange.amount[$scope.newChange.amount.length-1] === 'p'){
