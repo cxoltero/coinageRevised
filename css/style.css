@@ -1,0 +1,76 @@
+*{
+	padding: 0;
+	margin: 0;
+}
+html, body{
+	background: url(../img/pound) no-repeat center center fixed; 
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	background-color: white;
+}
+/*index html section*/
+.navbar{
+	background-color: rgba(141, 38, 48, .7);
+	width: 100%;
+}
+.navbar-inverse .navbar-brand{
+	color: white;
+	font-size: 4.5vh;
+}
+
+/*Main partial*/
+.section{
+	margin-top: 15%;
+}
+.jumbotron{
+	width: 75%;
+	margin-left: 12.5%;
+}
+#pageTitle{
+	font-size: 3vh;
+	text-align: center;
+	font-weight: bold;
+	color: #980F27;
+}
+#subtitle{
+	font-size: 2.5vh;
+	text-align: center;
+	margin-top: -5px;
+	padding-bottom: 30px;
+}
+/*Form*/
+.mainForm{
+	text-align: center;
+	padding: 15px;
+}
+.footer, #myModalLabel{
+	text-align: center;
+}
+input{
+	display: inline-block;
+}
+ul >li {
+	list-style: none;
+	text-align: center;
+}
+
+footer{
+	position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 40px;
+	background-color: rgba(255, 255, 255, .5);
+}
+@media screen and (max-width: 720px) {
+    .smallTitles{
+    	display: none;
+    }
+    .section{
+		margin-top: 25%;
+	}
+	button{
+		margin-top: 10px;
+	}
+}
