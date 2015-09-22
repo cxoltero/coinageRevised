@@ -85,3 +85,38 @@ function checkforLorP(n){
 	}
 }
 
+
+// function to make change
+function makeChange(){
+var newChange = {};
+var coins = [];
+
+	while(n > 0){
+		var TwoPound = Math.floor(n/200);
+		n %= 200;
+		var pound = Math.floor(n/100);
+		n %= 100;
+		var fiftyPence = Math.floor(n/50);
+		n %= 50;
+		var twenty =  Math.floor(n/20);
+		n %= 20;
+		var twoPence =  Math.floor(n/2);
+		n %= 2;
+		var penny =  Math.floor(n/1);
+		n %= 1;
+		
+		if(TwoPound){newChange.TwoPound= TwoPound;}
+   	 	if(pound){newChange.pound= pound;}
+   	 	if(fiftyPence){newChange.fiftyPence= fiftyPence;}
+   	 	if(twenty){newChange.twenty= twenty;}
+   	 	if(twoPence){newChange.twoPence= twoPence;}
+   	 	if(penny){newChange.penny= penny;}
+   	}
+
+   	// at the end the value of amount will always be 0, so no need to print it
+   	delete n;
+   	console.log(newChange);
+   	coins.push(newChange);
+	newChange ={};
+};
+

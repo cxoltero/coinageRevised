@@ -38,3 +38,15 @@ describe("check for £ and p", function(){
   	expect(checkforLorP('£asdfsdfp')).toBeUndefined();
   });
 });
+describe("makeChange", function(){
+	it("break a quantity into coins", function(){
+		expect(makeChange(2000)).toEqual(jasmine.objectContaining({
+			TwoPound: 10
+		}));
+		expect(makeChange(234)).toEqual(jasmine.objectContaining({
+			TwoPound: 1,
+			twenty: 1, 
+			twoPence: 7
+		}));
+	})
+})
