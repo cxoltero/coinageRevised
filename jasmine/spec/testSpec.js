@@ -56,5 +56,13 @@ describe("makeChange", function(){
 			twoPence: 1,
 			penny: 1
 		}));
+		expect(makeChange(393)).not.toEqual(Object({
+			TwoPound: 1,
+			pound: 1,
+			fiftyPence: 1,
+			twenty: 8, 
+			twoPence: 1,
+			penny: 1
+		}));
 	})
 })

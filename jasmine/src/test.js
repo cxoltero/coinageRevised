@@ -86,7 +86,7 @@ function checkforLorP(n){
 		return n;
 	}
 }
-
+	
 
 // function to make change
 function makeChange(n){

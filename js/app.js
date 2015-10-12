@@ -10,3 +10,4 @@ var kenzanExc = angular.module('kenzanExc',['ngRoute'])
 				redirectTo: '/'
 			})
 	});
+// 
