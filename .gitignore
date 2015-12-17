@@ -1,0 +1,16 @@
+### Example user template template
+### Example user template
+
+# IntelliJ project files
+.idea
+*.iml
+out
+gen
+js/angular.min.js
+js/bootstrap.min.js
+js/jquery.js
+css/bootstrap.min.css
+fonts
+
+
+# Created by .ignore support plugin (hsz.mobi)
