@@ -1,0 +1,18 @@
+{
+  "name": "coinageRevised",
+  "homepage": "https://github.com/cxoltero/coinageRevised",
+  "authors": [
+    "Roberto C. Hernandez <carlosh95@gmail.com>"
+  ],
+  "description": "app that breaks coins into pounds",
+  "main": "",
+  "moduleType": [],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
